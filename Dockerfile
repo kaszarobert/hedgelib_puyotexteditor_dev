@@ -74,7 +74,7 @@ COPY --from=0 /application/build/HedgeNeedle /application/HedgeLib/HedgeNeedle
 COPY --from=0 /application/build/HedgeSet /application/HedgeLib/HedgeSet
 
 RUN chmod -R a+x /application/HedgeLib/* \
-  && git clone -b $PUYO_REPO_BRANCH https://github.com/ricky-daniel13/puyo-text-editor.git /application/puyo-text-editor \
+  && git clone -b $PUYO_REPO_BRANCH https://github.com/nickworonekin/puyo-text-editor.git /application/puyo-text-editor \
   && cd /application/puyo-text-editor \
   && git checkout $PUYO_REPO_COMMITID \
   && dotnet publish /application/puyo-text-editor -c Release
